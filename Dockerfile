@@ -1,7 +1,7 @@
 FROM archlinux
 ENV DOCKER_USR dav
 
-# WORKDIR /build
+LABEL org.opencontainers.image.description="davmail"
 
 RUN pacman -Sy --noconfirm base base-devel git \
     && pacman -Scc --noconfirm
