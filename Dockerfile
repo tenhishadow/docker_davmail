@@ -1,5 +1,4 @@
-FROM archlinux
-# debian:stable-slim
+FROM archlinux:base
 
 ENV DOCKER_USR dav
 
@@ -21,7 +20,8 @@ RUN git clone https://aur.archlinux.org/yay-bin.git \
     && rm -rf /home/$DOCKER_USR/yay-bin \
     && yay -Sy --nodeps --noconfirm davmail \
     && yay -Scc --noconfirm \
-    && sudo pacman -Rscnv --noconfirm yay-bin git fakeroot binutils
+    && sudo pacman -Rscnv --noconfirm \
+       yay-bin git fakeroot binutils
 
 COPY --chown=root:root --chmod=0444 davmail.properties.j2 davmail.properties.j2
 COPY --chown=root:root --chmod=0445 main.py main.py
