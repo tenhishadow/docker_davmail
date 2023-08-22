@@ -17,6 +17,6 @@ WORKDIR /home/$DOCKER_USR
 RUN git clone https://aur.archlinux.org/yay-bin.git \
     && cd yay-bin \
     && makepkg -si --noconfirm \
-    && rm -rf ./yay-bin \
+    && rm -rf /home/$DOCKER_USR/yay-bin \
     && yay -Sy --noconfirm davmail \
     && yay -Scc --noconfirm
