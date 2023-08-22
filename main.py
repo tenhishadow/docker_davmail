@@ -11,4 +11,4 @@ with open('davmail.properties', 'w') as f:
 
 # run it
 command = ["davmail", "davmail.properties"]
-subprocess.Popen(command)
+subprocess.call(command)

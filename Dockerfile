@@ -21,7 +21,7 @@ RUN git clone https://aur.archlinux.org/yay-bin.git \
     && yay -Sy --noconfirm davmail python-jinja \
     && yay -Scc --noconfirm
 
-COPY --chown=root:root --chmod=0445 davmail.properties.j2 davmail.properties.j2
+COPY --chown=root:root --chmod=0444 davmail.properties.j2 davmail.properties.j2
 COPY --chown=root:root --chmod=0445 main.py main.py
 
 CMD ["python", "main.py"]
