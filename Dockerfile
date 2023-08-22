@@ -19,9 +19,9 @@ RUN git clone https://aur.archlinux.org/yay-bin.git \
     && cd yay-bin \
     && makepkg -si --noconfirm \
     && rm -rf /home/$DOCKER_USR/yay-bin \
-    && yay -Sy --noconfirm davmail \
-    && yay -Scc --noconfirm \
-    && sudo pacman -Rs --noconfirm git fakeroot binutils yay
+    && yay -Sy --nodeps --noconfirm davmail \
+    && yay -Rs --noconfirm git fakeroot binutils \
+    && yay -Scc --noconfirm
 
 COPY --chown=root:root --chmod=0444 davmail.properties.j2 davmail.properties.j2
 COPY --chown=root:root --chmod=0445 main.py main.py
