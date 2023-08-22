@@ -10,5 +10,5 @@ with open('davmail.properties', 'w') as f:
     f.write(rendered_text)
 
 # run it
-command = ["nohup", "davmail", "davmail.properties", "&"]
+command = ["nohup", "davmail", "davmail.properties"]
 subprocess.Popen(command)
