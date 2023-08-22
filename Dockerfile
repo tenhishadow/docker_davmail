@@ -1,4 +1,5 @@
 FROM archlinux
+
 ENV DOCKER_USR dav
 
 LABEL org.opencontainers.image.description="davmail"
